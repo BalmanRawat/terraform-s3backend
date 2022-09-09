@@ -1,4 +1,4 @@
-![terraform.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1662695634078/raKONz7EO.png align="left")
+![terraform](https://user-images.githubusercontent.com/8892649/189290223-e9320325-213d-4228-8573-19b8a8088f02.png)
 
 Hashicorp terraform supports multiple backends out of which S3 is one of the them. If you are an AWS customer and looking forward to stay within AWS boundary then `s3 backend` is the right choice for you. Find more [details](https://www.terraform.io/language/settings/backends/configuration)
 
@@ -94,9 +94,9 @@ make use of the examples in the repository.
 
 Once we apply the change we should be able to see similar changes in the bucket and table as shown below:
 
-![bucket-image](https://cdn.hashnode.com/res/hashnode/image/upload/v1662704686740/OTL9fZSi8.png align="left")
+![bucket](https://user-images.githubusercontent.com/8892649/189290617-53df9486-e159-431b-9a4d-e5e8fd0e0e8b.png)
 
-![dynamodb-table](https://cdn.hashnode.com/res/hashnode/image/upload/v1662704824331/07u2t1Fph.png align="left")
+![table](https://user-images.githubusercontent.com/8892649/189290724-9ccf8519-3df3-494e-9051-e6e519fc1ee8.png)
 
 All done. Remember to run `terraform destory` once you are done with the experiment.
 
