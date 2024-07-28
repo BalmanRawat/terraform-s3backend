@@ -7,15 +7,20 @@ terraform {
   }
   # A backend block cannot refer to named values (like input variables, locals, or data source attributes). https://www.terraform.io/language/settings/backends/configuration
   backend "s3" {
-    bucket = "balman-backend-bucket"
-    key = "examples/terraform.tfstate"
+    bucket = "preprod-balman-backend-bucket"
+    key    = "s3backend-examples/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "backend-table"
+    dynamodb_table = "preprod-balman-backend-table"
   }
 }
 
 provider "aws" {
   region = "us-east-1"
+}
+
+provider "aws" {
+  region = "us-west-1"
+  alias = "west"
 }
 
 resource "aws_sqs_queue" "consumer_queue" {
@@ -37,3 +42,12 @@ resource "aws_sqs_queue" "dlq" {
     Name = "example-dlq"
   }
 }
+
+# resource "aws_sqs_queue" "dlq_west" {
+#   provider = aws.west
+#   name = "example-dlq"
+
+#   tags = {
+#     Name = "example-dlq"
+#   }
+# }
